@@ -32,7 +32,9 @@ module.exports = grammar({
       $.input_statement,
       $.function_declaration,
       $.if_statement,
+      $.loop_statement,
       $.return_statement,
+      $.break_statement,
       $.expression_statement
     ),
 
@@ -58,18 +60,30 @@ module.exports = grammar({
       field('name', $.identifier)
     ),
 
+    parameter: $ => seq(
+      optional('AN'),
+      'YR',
+      field('name', $.identifier)
+    ),
+
     function_declaration: $ => seq(
       'HOW IZ I',
       field('name', $.identifier),
-      repeat(seq('YR', $.identifier)),
+      repeat($.parameter),
       repeat($._statement),
       'IF U SAY SO'
+    ),
+
+    argument: $ => seq(
+      optional('AN'),
+      'YR',
+      $._expression
     ),
 
     function_call: $ => seq(
       'I IZ',
       field('name', $.identifier),
-      repeat(seq('YR', $._expression)),
+      repeat($.argument),
       optional('MKAY')
     ),
 
@@ -81,10 +95,20 @@ module.exports = grammar({
       'OIC'
     ),
 
+    loop_statement: $ => seq(
+      'IM IN YR',
+      field('name', $.identifier),
+      repeat($._statement),
+      'IM OUTTA YR',
+      $.identifier
+    ),
+
     return_statement: $ => seq(
-      'FOUND YARN',
+      choice('FOUND YR', 'FOUND YARN'),
       field('value', $._expression)
     ),
+
+    break_statement: $ => 'GTFO',
 
     expression_statement: $ => prec(-1, $._expression),
 
