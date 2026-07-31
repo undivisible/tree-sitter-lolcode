@@ -1,0 +1,19 @@
+[package]
+name = "tree-sitter-lolcat"
+version = "0.1.0"
+description = "LOLCAT / LOLCODE grammar for tree-sitter"
+repository = "https://github.com/undivisible/tree-sitter-lolcat"
+license = "MIT"
+edition = "2021"
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.0"
+
+[dev-dependencies]
+tree-sitter = "0.24"
