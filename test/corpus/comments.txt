@@ -1,0 +1,41 @@
+==================
+Multiline comments end at TLDR, not prefixes
+==================
+
+HAI 1.2
+OBTW first line
+TLDRish is still a comment
+and so is this line
+TLDR
+VISIBLE "ok"
+KTHXBYE
+
+---
+
+(source_file
+  (version)
+  (multiline_comment)
+  (print_statement value: (string)))
+
+==================
+Single-line comments and separate multiline comments
+==================
+
+HAI 1.2
+BTW ordinary comment
+OBTW one TLDR
+VISIBLE "one"
+OBTW another
+comment TLDR
+VISIBLE "two"
+KTHXBYE
+
+---
+
+(source_file
+  (version)
+  (comment)
+  (multiline_comment)
+  (print_statement value: (string))
+  (multiline_comment)
+  (print_statement value: (string)))

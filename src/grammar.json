@@ -39,37 +39,15 @@
       "value": "[0-9]+(\\.[0-9]+)*"
     },
     "comment": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "BTW"
-            },
-            {
-              "type": "PATTERN",
-              "value": "[^\\n]*"
-            }
-          ]
+          "type": "STRING",
+          "value": "BTW"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "OBTW"
-            },
-            {
-              "type": "PATTERN",
-              "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "TLDR"
-            }
-          ]
+          "type": "PATTERN",
+          "value": "[^\\n]*"
         }
       ]
     },
@@ -736,6 +714,10 @@
     {
       "type": "SYMBOL",
       "name": "comment"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "multiline_comment"
     }
   ],
   "conflicts": [
@@ -744,7 +726,12 @@
     ]
   ],
   "precedences": [],
-  "externals": [],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "multiline_comment"
+    }
+  ],
   "inline": [],
   "supertypes": []
 }

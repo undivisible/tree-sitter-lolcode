@@ -4,7 +4,10 @@ module.exports = grammar({
   extras: $ => [
     /\s/,
     $.comment,
+    $.multiline_comment,
   ],
+
+  externals: $ => [$.multiline_comment],
 
   conflicts: $ => [
     [$.function_call],
@@ -20,10 +23,7 @@ module.exports = grammar({
 
     version: $ => /[0-9]+(\.[0-9]+)*/,
 
-    comment: $ => choice(
-      seq('BTW', /[^\n]*/),
-      seq('OBTW', /[^\n]*/, 'TLDR')
-    ),
+    comment: $ => seq('BTW', /[^\n]*/),
 
     _statement: $ => choice(
       $.variable_declaration,
