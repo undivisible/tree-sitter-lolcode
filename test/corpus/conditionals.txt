@@ -1,0 +1,24 @@
+==================
+Conditional branches with MEBBE
+==================
+
+HAI 1.2
+O RLY?
+ YA RLY
+  VISIBLE "yes"
+ MEBBE BOTH SAEM x AN 2
+  VISIBLE "maybe"
+ NO WAI
+  VISIBLE "no"
+OIC
+KTHXBYE
+
+---
+
+(source_file
+  (version)
+  (if_statement
+    (print_statement value: (string))
+    (binary_expression (identifier) (number))
+    (print_statement value: (string))
+    (print_statement value: (string))))

@@ -341,6 +341,29 @@
           }
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "MEBBE"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_expression"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_statement"
+                }
+              }
+            ]
+          }
+        },
+        {
           "type": "CHOICE",
           "members": [
             {
@@ -690,7 +713,7 @@
     },
     "string": {
       "type": "PATTERN",
-      "value": "\"[^\"]*\""
+      "value": "\"([^\":]|:[^\\n])*\""
     },
     "boolean": {
       "type": "CHOICE",

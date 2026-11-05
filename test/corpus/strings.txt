@@ -1,0 +1,15 @@
+==================
+YARN escapes do not terminate strings
+==================
+
+HAI 1.2
+VISIBLE "say :"hello:" and a colon ::"
+VISIBLE "after"
+KTHXBYE
+
+---
+
+(source_file
+  (version)
+  (print_statement value: (string))
+  (print_statement value: (string)))

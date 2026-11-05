@@ -8,9 +8,11 @@ Tree-sitter grammar for **LOLCODE** language.
 - Assignment (`R`).
 - Input / Output (`VISIBLE`, `GIMMEH`).
 - Binary & Unary expressions (`SUM OF`, `DIFF OF`, `PRODUKT OF`, `QUOSHUNT OF`, `MOD OF`, `BOTH OF`, `EITHER OF`, `BOTH SAEM`, `DIFFRINT`, `NOT`).
-- Control flow (`O RLY?` / `YA RLY` / `NO WAI` / `OIC`).
+- Control flow (`O RLY?` / `YA RLY` / `MEBBE` / `NO WAI` / `OIC`).
 - Functions (`HOW IZ I` / `IF U SAY SO`).
 - Comments (`BTW`, `OBTW ... TLDR`).
+
+This grammar does not yet cover the full LOLCODE 1.2 specification.
 
 ## Usage
 ### Rust

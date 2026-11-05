@@ -91,6 +91,7 @@ module.exports = grammar({
       'O RLY?',
       'YA RLY',
       repeat($._statement),
+      repeat(seq('MEBBE', $._expression, repeat($._statement))),
       optional(seq('NO WAI', repeat($._statement))),
       'OIC'
     ),
@@ -143,7 +144,7 @@ module.exports = grammar({
 
     number: $ => /-?[0-9]+(\.[0-9]+)?/,
 
-    string: $ => /"[^"]*"/,
+    string: $ => /"([^":]|:[^\n])*"/,
 
     boolean: $ => choice('WIN', 'FAIL')
   }
