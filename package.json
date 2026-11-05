@@ -2,7 +2,7 @@
   "name": "tree-sitter-lolcode",
   "version": "0.0.2",
   "description": "LOLCODE grammar for tree-sitter",
-  "main": "bindings/node",
+  "private": true,
   "keywords": [
     "tree-sitter",
     "lolcode",
@@ -10,9 +10,6 @@
   ],
   "author": "undivisible",
   "license": "MIT",
-  "dependencies": {
-    "nan": "^2.18.0"
-  },
   "devDependencies": {
     "tree-sitter-cli": "^0.24.0"
   },

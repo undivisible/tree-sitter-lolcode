@@ -6,10 +6,17 @@ extern "C" {
 
 pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_lolcode) };
 
-pub const HIGHLIGHTS_QUERY: &str = "";
+pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
+pub const HIGHLIGHTS_QUERY: &str =
+    include_str!("../../zed-extension/languages/lolcode/highlights.scm");
 
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn highlight_query_loads() {
+        tree_sitter::Query::new(&super::LANGUAGE.into(), super::HIGHLIGHTS_QUERY).unwrap();
+    }
+
     #[test]
     fn parses_multiline_comments() {
         let mut parser = tree_sitter::Parser::new();
