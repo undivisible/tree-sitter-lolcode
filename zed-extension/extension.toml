@@ -1,0 +1,11 @@
+id = "lolcode"
+name = "LOLCODE"
+version = "0.1.0"
+schema_version = 1
+authors = ["undivisible"]
+description = "LOLCODE language support"
+repository = "https://github.com/undivisible/tree-sitter-lolcode"
+
+[grammars.lolcode]
+repository = "https://github.com/undivisible/tree-sitter-lolcode"
+commit = "f8eb5fbdaa7b0728137524a1eb55b274737205d8"

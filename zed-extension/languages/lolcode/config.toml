@@ -1,0 +1,8 @@
+name = "LOLCODE"
+grammar = "lolcode"
+path_suffixes = ["lol"]
+line_comments = ["BTW "]
+tab_size = 2
+brackets = [
+  { start = '"', end = '"', close = true, newline = false, not_in = ["comment", "string"] },
+]
